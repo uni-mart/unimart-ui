@@ -1,14 +1,9 @@
-import Button from "components/Button";
-import { ReactComponent as LOGO } from "assets/brand.svg"
+import React from 'react'
 
 const LandingPage = () => {
-    return (
-        <section>
-            <LOGO />
-            <h1>I am Header</h1>
-            <Button />
-        </section>
-    )
+  return (
+    <div>LandingPage</div>
+  )
 }
 
-export default LandingPage;
+export default LandingPage
