@@ -7,6 +7,7 @@ import LoginPage from 'Pages/LoginPage'
 import SignUpPage from 'Pages/SignUpPage'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+import BodyContainer from 'components/BodyContainer'
 
 function App() {
 
@@ -14,14 +15,14 @@ function App() {
     <div className='min-vh-100 d-flex flex-column'>
       <Router>
         <Header />
-        <Container className='flex-auto'>
+        <BodyContainer className='flex-fill d-flex'>
           <Routes>
             <Route path='/' element={<LandingPage />} exact />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/signUp' element={<SignUpPage />} />
           </Routes>
-        </Container>
-        <Footer className />
+        </BodyContainer>
+        <Footer />
       </Router>
     </div>
 
