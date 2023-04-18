@@ -11,22 +11,17 @@ import Footer from 'components/Footer'
 function App() {
 
   return (
-    <div>
+    <div className='min-vh-100 d-flex flex-column'>
       <Router>
         <Header />
-        <main className='py-3'>
-          <Container >
-            <Routes>
-              <Route path='/' element={<LandingPage />} exact />
-              <Route path='/login' element={<LoginPage />} />
-              <Route path='/signUp' element={<SignUpPage />} />
-
-            </Routes>
-
-          </Container>
-
-        </main>
-        <Footer />
+        <Container className='flex-auto'>
+          <Routes>
+            <Route path='/' element={<LandingPage />} exact />
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/signUp' element={<SignUpPage />} />
+          </Routes>
+        </Container>
+        <Footer className />
       </Router>
     </div>
 
