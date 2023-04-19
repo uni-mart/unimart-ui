@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, ButtonGroup } from 'react-bootstrap';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash, faEdit } from "@fortawesome/free-solid-svg-icons";
 import '../css/ProfilePage.css'; // Import custom styles for the profile page
+
 
 function ProfilePage() {
   const [username, setUsername] = useState('John Doe');
@@ -42,7 +45,7 @@ function ProfilePage() {
           <br />
           <br />
           
-            <ListGroup variant='flush' >
+            <ListGroup variant='flush'className="fs-4 " >
                 <ListGroup.Item action variant="light"  className="list-item">Profile</ListGroup.Item>
                 <ListGroup.Item action variant="light"  className="list-item">My products</ListGroup.Item>
                 <ListGroup.Item action variant="light"  className="list-item">My orders</ListGroup.Item>
@@ -60,6 +63,8 @@ function ProfilePage() {
             
           
           </div>
+
+          <div className='profile-page-form'>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formUsername">
               <Form.Label>Username</Form.Label>
@@ -70,18 +75,34 @@ function ProfilePage() {
                 </Button>
               </div>
             </Form.Group>
-            <Form.Group controlId="formPassword">
-              <Form.Label>Password</Form.Label>
-              <div className="input-group">
-                <Form.Control type={showPassword ? 'text' :'password'} value={password} onChange={handlePasswordChange} />
-                <Button variant="link">
-                <i class="fas fa-edit" aria-hidden="true"></i>
-                </Button>
-                <Button variant="link" onClick={togglePassword}>
-                    {showPassword ? <i class="fas fa-eye" aria-hidden="true"></i> : <i class="fas fa-eye-slash" aria-hidden="true"></i>}
-                </Button>
-              </div>
-            </Form.Group>
+
+           <Form.Group controlId="formPassword">
+                <Form.Label>Password</Form.Label>
+                <div className="input-group">
+                  <Form.Control
+                    type={showPassword ? 'text' :'password'}
+                    value={password}
+                    onChange={handlePasswordChange}
+                   
+                  />
+                <div className="input-group-append">
+          <span className="input-group-text">
+            {showPassword ? (
+              <FontAwesomeIcon icon={faEyeSlash} onClick={togglePassword} />
+            ) : (
+              <FontAwesomeIcon icon={faEye} onClick={togglePassword} />
+            )}
+          </span>
+          <span className="input-group-text">
+            <FontAwesomeIcon icon={faEdit} />
+          </span>
+        </div>
+                </div>
+              </Form.Group>
+
+
+
+        
             <Form.Group controlId="formEmail">
               <Form.Label>Email</Form.Label>
               <div className="input-group">
@@ -100,8 +121,9 @@ function ProfilePage() {
                 </Button>
               </div>
             </Form.Group>
-            <Button type="submit" variant="primary">Update</Button>
+            <Button type="submit" variant="primary" className='py-3'>Update</Button>
           </Form>
+          </div>
         </Col>
       </Row>
     </Container>
