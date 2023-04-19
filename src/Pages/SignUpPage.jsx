@@ -33,7 +33,7 @@ const SignUpPage = () => {
                 <Form.Label>Student</Form.Label>
                     <Form.Control
                     required
-                    type="number"
+                    type="text"
                     placeholder ='Enter Student ID'
                     value={studentId}
                     onChange={(e) =>setStudentId(e.target.value)}
@@ -53,7 +53,7 @@ const SignUpPage = () => {
                 </Form.Group>
 
                 <Form.Group controlId='email'>
-                    <Form.Label>Email Address</Form.Label>
+                    <Form.Label>Student Email</Form.Label>
                     <Form.Control
                         required
                         type='email'

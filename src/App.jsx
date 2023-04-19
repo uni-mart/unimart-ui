@@ -7,6 +7,7 @@ import LoginPage from 'Pages/LoginPage'
 import SignUpPage from 'Pages/SignUpPage'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+import ProfilePage from 'Pages/ProfilePage'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
                 <Route path='/' element={<LandingPage />} exact />
                 <Route path='/login' element={<LoginPage />}  />
                 <Route path='/signUp' element={<SignUpPage />}  />
+                <Route path='/profile' element={<ProfilePage />}  />
 
               </Routes>
               
