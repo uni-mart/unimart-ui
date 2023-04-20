@@ -1,10 +1,13 @@
 import React from 'react'
+import {  Col } from 'react-bootstrap';
+import ListGroup from 'react-bootstrap/ListGroup';
+import '../css/Sidebar.css'
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   return (
     
-     <Col md={3} className="left-bar">
-          <h1 className="display-5 mb-5">{username}</h1>
+    <Col md={3} className="left-bar">
+          <h1 className="display-5 mb-5">{props.username}</h1>
           <br />
           <br />
           <br />

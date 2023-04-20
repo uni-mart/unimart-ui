@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, ButtonGroup } from 'react-bootstrap';
-import ListGroup from 'react-bootstrap/ListGroup';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash, faEdit } from "@fortawesome/free-solid-svg-icons";
 import '../css/ProfilePage.css'; // Import custom styles for the profile page
-
+import Sidebar from 'components/Sidebar';
 
 function ProfilePage() {
   const [username, setUsername] = useState('John Doe');
@@ -39,23 +38,7 @@ function ProfilePage() {
   return (
     <Container fluid className="profile-page">
       <Row>
-        <Col md={3} className="left-bar">
-          <h1 className="display-5 mb-5">{username}</h1>
-          <br />
-          <br />
-          <br />
-          
-            <ListGroup variant='flush'className="fs-4 " >
-                <ListGroup.Item action variant="light"  className="list-item">Profile</ListGroup.Item>
-                <ListGroup.Item action variant="light"  className="list-item">My products</ListGroup.Item>
-                <ListGroup.Item action variant="light"  className="list-item">My orders</ListGroup.Item>
-                <ListGroup.Item action variant="light"  className="list-item">Payment</ListGroup.Item>
-            </ListGroup>
-            
-         
-            
-          
-        </Col>
+        <Sidebar username={username}/>
         <Col md={8}>
           <div className="text-center mb-4">
             <img src="https://via.placeholder.com/150" alt="User Profile" className="rounded-circle" width="150" height="150" />

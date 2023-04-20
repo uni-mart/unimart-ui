@@ -1,0 +1,10 @@
+.list-group-item:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+  .list-group-item-action:focus, .list-group-item-action:hover {
+  
+    color:  #dfd7d7 !important;
+  
+    background-color: #555151 !important ;
+}
