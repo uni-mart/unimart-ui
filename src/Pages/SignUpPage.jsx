@@ -94,7 +94,7 @@ const SignUpPage = () => {
                 </Button>
 
             </Form>
-            <Row className='py-3' >
+            <Row className='py-4 mb-4' >
                 <Col>
                     Already Registered ? <Link
                         to='/login'>
