@@ -47,14 +47,13 @@ const LoginPage = () => {
                     </Button>
                 </Form.Group>
             </Form>
-            <Row className='py-3' >
+            <Row className='py-4 mb-4'>
                 <Col>
                     New Customer ? <Link
                         to='/signUp'>
                         Sign Up
                     </Link>
                 </Col>
-
             </Row>
         </FormContainer>
     )
