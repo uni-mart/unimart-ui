@@ -15,7 +15,7 @@ function App() {
     <div className='min-vh-100 d-flex flex-column'>
       <Router>
         <Header />
-        <BodyContainer >
+        <BodyContainer className='flex-fill d-flex'>
           <Routes>
             <Route path='/' element={<LandingPage />} exact />
             <Route path='/login' element={<LoginPage />} />
