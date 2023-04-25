@@ -4,6 +4,7 @@ import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/Loader'
 import Message from 'components/Message'
+import '../css/ProfilePage.css'
 import FormContainer from 'components/FormContainer'
 import { login } from '../Actions/UserActions'
 
@@ -11,6 +12,9 @@ import { login } from '../Actions/UserActions'
 const LoginPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePassword = () => setShowPassword(!showPassword)
 
     const submitHandler = (e) => {
         e.preventDefault()
