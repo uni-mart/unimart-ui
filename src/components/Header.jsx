@@ -1,12 +1,46 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
+import { useLocation } from 'react-router-dom'
 // import { ReactComponent as Logo } from "assets/brand-logo.svg";
 
 const Header = () => {
+  const urlLocation = useLocation();
+  const [isOnHome, setIsOnHome] = useState(true);
+
+  const [animateNavFlag, setAnimateAnimateFlag] = useState(false);
+
+  const animateNavbar = () => {
+    // console.log('Window Scroll Y: ', window.scrollY);
+    if (window.scrollY >= 70) {
+      setAnimateAnimateFlag(true);
+    } else {
+      setAnimateAnimateFlag(false);
+    }
+  }
+
+  useEffect(() => {
+    if (urlLocation.pathname === "/") {
+      setIsOnHome(true);
+      window.addEventListener('scroll', animateNavbar)
+    } else {
+      setIsOnHome(false);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', animateNavbar)
+    }
+  }, [urlLocation])
+
   return (
-    <header className='position-absolute top-0 w-100' style={{ zIndex: 100 }}>
-      <Navbar bg="transparent" variant='dark' expand="lg" collapseOnSelect>
+    <header className={
+      `
+        custom-header
+        ${isOnHome ? 'position-fixed top-0 w-100' : 'position-relative top-0 w-100 bg-black'}
+        ${animateNavFlag ? 'animated-nav' : ''}
+      `
+    } style={{ zIndex: 100 }}>
+      <Navbar variant='dark' expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand >
@@ -38,9 +72,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
     </header>
-
   )
 }
 
