@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap'
 const LandingPage = () => {
   return (
     <div className='bg-black w-100 min-vh-100 flex-fill' style={{
-      backgroundImage: "url(src/assets/banner.avif)",
+      backgroundImage: "url(/banner.avif)",
       backgroundSize: 'cover'
     }}>
       {/* <img src='src/assets/banner.avif' className='banner-img' style={{ opacity: "0.5" }} /> */}
