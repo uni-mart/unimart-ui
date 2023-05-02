@@ -9,5 +9,13 @@ export default defineConfig({
     outDir: "build",
     // assetsDir: "src/assets"
   },
-  base: ""
+  base: "",
+  server: {
+    watch: {
+      usePolling: true
+    },
+    host: true, // Need for docker container port mapping
+    strictPort: true,
+    // port: 5173
+  }
 });
