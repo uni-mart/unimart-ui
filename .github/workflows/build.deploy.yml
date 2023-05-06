@@ -59,7 +59,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: allure-report
-          folder: ${{ github.workspace }}/ui-automation/allure-report
+          folder: ui-automation/allure-report
           clean: true
           commit_message: Deploy Allure Report v.${{github.run_number}} to GitHub Pages
           enable_jekyll: false
