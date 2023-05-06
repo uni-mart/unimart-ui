@@ -36,8 +36,8 @@ jobs:
           path: ui
           
       - name: Install dependencies, build and preview UI
+        working-directory: ui
         run: |
-          cd ui
           npm install
           npm run build
           npm run preview
@@ -57,6 +57,10 @@ jobs:
           npm install
           npm run cy:runHeadless
           npm run cy:genReport
+          
+      - name: Change directory to UI folder
+        run: |
+          cd ui
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -67,7 +71,7 @@ jobs:
           clean: true
           commit_message: Deploy Allure Report v.${{github.run_number}} to GitHub Pages
           enable_jekyll: false
-          workspace: ui-automation
+          workspace: ui
 
       - name: Build Docker image
         working-directory: ui
