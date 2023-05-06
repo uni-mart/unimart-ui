@@ -64,7 +64,6 @@ jobs:
           commit_message: Deploy Allure Report v.${{github.run_number}} to GitHub Pages
           enable_jekyll: false
           workspace: ${{ github.workspace }}
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Docker image
         working-directory: ui
