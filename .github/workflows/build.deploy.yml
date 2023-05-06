@@ -60,6 +60,7 @@ jobs:
         with:
           branch: allure-report
           folder: ui-automation/allure-report
+          token: ${{ secrets.GITHUB_TOKEN }}
           clean: true
           commit_message: Deploy Allure Report v.${{github.run_number}} to GitHub Pages
           enable_jekyll: false
