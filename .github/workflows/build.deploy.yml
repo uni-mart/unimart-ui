@@ -57,7 +57,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: allure-report
-          folder: ${{ GITHUB_WORKSPACE }}/unimart-ui-automation/allure-report
+          folder: ${{ runner.workspace }}/unimart-ui-automation/allure-report
           clean: true
           commit_message: Deploy Allure Report to GitHub Pages
           enable_jekyll: false
