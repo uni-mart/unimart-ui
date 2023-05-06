@@ -73,7 +73,7 @@ jobs:
           run: |
             ls -1 | xargs -n 1 echo
           branch: allure-report
-          folder:  /home/runner/work/unimart-ui/unimart-ui/ui-automation
+          folder:  ~/home/runner/work/unimart-ui/unimart-ui/ui-automation/allure-report
           token: ${{ secrets.GITHUB_TOKEN }}
           clean: true
           commit_message: Deploy Allure Report v.${{github.run_number}} to GitHub Pages
