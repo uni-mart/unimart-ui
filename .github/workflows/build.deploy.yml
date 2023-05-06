@@ -9,10 +9,6 @@ on:
   # pull_request:
   #   branches: [ "main" ]
 
-env:
-  DOCKERHUB_USERNAME: bitcode001
-  DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-
 jobs:
   build:
 
@@ -69,9 +65,12 @@ jobs:
 
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v6
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
         with:
-          image: "$DOCKERHUB_USERNAME/unimart/ui"
+          image: ${{ env.DOCKERHUB_USERNAME }}/unimart/ui
           tags: ${{github.run_number}}, latest
           registry: dockerhub.io
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD 
+          username: ${{ env.DOCKERHUB_USERNAME }}
+          password: ${{ env.DOCKERHUB_PASSWORD }}
