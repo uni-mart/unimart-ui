@@ -47,18 +47,21 @@ jobs:
 
       - name: Run Cypress tests
         id: run-cypress-test
-        working-directory: ${{ GITHUB_WORKSPACE }}/unimart-ui-automation
+        working-directory: unimart-ui-automation
         run: |
           npm install
           npm run cy:runHeadless
           npm run cy:genReport
           
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        id: deploy-allure
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: allure-report
           folder: ${{ GITHUB_WORKSPACE }}/unimart-ui-automation/allure-report
+          clean: true
+          commit_message: Deploy Allure Report to GitHub Pages
+          enable_jekyll: false
+          workspace: ${{ github.workspace }}
 
       - name: Build Docker image
         working-directory: ui
