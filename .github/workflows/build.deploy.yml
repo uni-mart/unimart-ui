@@ -57,10 +57,12 @@ jobs:
           npm install
           npm run cy:runHeadless
           npm run cy:genReport
+          ls -1 | xargs -n 1 echo
           
       - name: Change directory to UI folder
         run: |
-          cd .. && cd ui
+          cd ui
+          ls -1 | xargs -n 1 echo
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
