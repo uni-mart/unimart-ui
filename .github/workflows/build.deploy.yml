@@ -59,7 +59,7 @@ jobs:
         id: deploy-allure
         with:
           branch: allure-report
-          folder: unimart-ui-automation/allure-report
+          folder: ./allure-report
 
       - name: Build Docker image
         working-directory: ui
