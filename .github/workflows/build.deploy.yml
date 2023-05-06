@@ -58,14 +58,6 @@ jobs:
           npm run cy:runHeadless
           npm run cy:genReport
           ls -1 | xargs -n 1 echo
-          
-      - name: Change directory to UI folder
-        run: |
-          cd ui
-          ls -1 | xargs -n 1 echo
-          
-      - name: Checkout repository
-        uses: actions/checkout@v2
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -73,7 +65,7 @@ jobs:
           run: |
             ls -1 | xargs -n 1 echo
           branch: allure-report
-          folder:  ~/work/unimart-ui/unimart-ui/ui-automation/allure-report
+          folder:  allure-report
           token: ${{ secrets.GITHUB_TOKEN }}
           clean: true
           commit_message: Deploy Allure Report v.${{github.run_number}} to GitHub Pages
