@@ -63,6 +63,9 @@ jobs:
         run: |
           cd ui
           ls -1 | xargs -n 1 echo
+          
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
