@@ -60,7 +60,7 @@ jobs:
           
       - name: Change directory to UI folder
         run: |
-          cd ../ui
+          cd .. && cd ui
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
