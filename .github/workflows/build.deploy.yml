@@ -60,17 +60,11 @@ jobs:
           ls -1 | xargs -n 1 echo
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3.7.0
         with:
-          run: |
-            ls -1 | xargs -n 1 echo
-          branch: allure-report
-          folder:  allure-report
-          token: ${{ secrets.GITHUB_TOKEN }}
-          clean: true
-          commit_message: Deploy Allure Report v.${{github.run_number}} to GitHub Pages
-          enable_jekyll: false
-          workspace: ui
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ui-automation/allure-report
+          publish_branch: allure-report
 
       - name: Build Docker image
         working-directory: ui
