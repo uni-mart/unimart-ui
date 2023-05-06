@@ -34,10 +34,13 @@ jobs:
           repository: uni-mart/unimart-ui
           ref: main
           path: ui
-          run: |
-            npm install
-            npm run build
-            npm run preview
+          
+      - name: Install dependencies, build and preview UI
+        run: |
+          cd ui
+          npm install
+          npm run build
+          npm run preview
 
       - name: Checkout UI-Automation repository
         uses: actions/checkout@v2
@@ -55,13 +58,11 @@ jobs:
           npm run cy:runHeadless
           npm run cy:genReport
 
-      - name: Checkout repository
-        uses: actions/checkout@v2
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: allure-report
-          folder: ui-automation/allure-report
+          folder: allure-report
           token: ${{ secrets.GITHUB_TOKEN }}
           clean: true
           commit_message: Deploy Allure Report v.${{github.run_number}} to GitHub Pages
