@@ -70,8 +70,8 @@ jobs:
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
-          image: $${{ DOCKERHUB_USERNAME }}/unimart/ui
+          image: "$DOCKERHUB_USERNAME/unimart/ui"
           tags: ${{github.run_number}}, latest
           registry: dockerhub.io
-          username: ${{ DOCKERHUB_USERNAME }}
-          password: ${{ DOCKERHUB_PASSWORD }}    
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD 
