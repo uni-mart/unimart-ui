@@ -67,4 +67,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: bitcode001/unimart/ui:${{github.run_number}}, bitcode001/unimart/ui:latest
+          tags: bitcode001/unimart-ui:${{github.run_number}}, bitcode001/unimart-ui:latest
