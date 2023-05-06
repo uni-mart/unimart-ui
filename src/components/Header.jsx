@@ -46,7 +46,7 @@ const Header = () => {
             <Navbar.Brand >
               {/* <Logo /> */}
               <img alt=""
-                src="src/assets/brand-logo.svg"
+                src="/brand-logo.svg"
                 // width="90"
                 height="50"
                 className="d-inline-block align-top"
