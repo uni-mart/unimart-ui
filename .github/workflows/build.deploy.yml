@@ -32,7 +32,6 @@ jobs:
         with:
           repository: uni-mart/unimart-ui
           ref: main
-          path: ui
           run: |
             npm install
             npm run build
@@ -44,11 +43,10 @@ jobs:
         with:
           repository: uni-mart/unimart-ui-automation
           ref: main
-          path: ui-automation
 
       - name: Run Cypress tests
         id: run-cypress-test
-        working-directory: ui-automation
+        working-directory: unimart-ui-automation
         run: |
           npm install
           npm run cy:runHeadless
@@ -59,7 +57,7 @@ jobs:
         id: deploy-allure
         with:
           branch: allure-report
-          folder: ./allure-report
+          folder: unimart-ui-automation/allure-report
 
       - name: Build Docker image
         working-directory: ui
