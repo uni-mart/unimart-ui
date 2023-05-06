@@ -54,18 +54,19 @@ jobs:
           npm install
           npm run cy:runHeadless
           npm run cy:genReport
-          
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          run: |
-            cd $GITHUB_WORKSPACE/ui
           branch: allure-report
           folder: ui-automation/allure-report
           token: ${{ secrets.GITHUB_TOKEN }}
           clean: true
           commit_message: Deploy Allure Report v.${{github.run_number}} to GitHub Pages
           enable_jekyll: false
+          workspace: ui
 
       - name: Build Docker image
         working-directory: ui
