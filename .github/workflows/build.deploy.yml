@@ -64,15 +64,13 @@ jobs:
           cd ui
           ls -1 | xargs -n 1 echo
 
-      - name: Checkout repository
-        uses: actions/checkout@v2
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           run: |
             ls -1 | xargs -n 1 echo
           branch: allure-report
-          folder: ../ui-automation/allure-report
+          folder:  /home/runner/work/unimart-ui/unimart-ui/ui-automation
           token: ${{ secrets.GITHUB_TOKEN }}
           clean: true
           commit_message: Deploy Allure Report v.${{github.run_number}} to GitHub Pages
