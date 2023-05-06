@@ -54,15 +54,7 @@ jobs:
           npm run cy:runHeadless
           npm run cy:genReport
           ls -1 | xargs -n 1 echo
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3.7.0
-        with:
-          github_token: ${{ secrets.PERSONAL_TOKEN }}
-          publish_dir: ui-automation/allure-report
-          publish_branch: allure-report
-          commit_message: Deployed Allure Report v.${{github.run_number}} to GitHub Pages
-
+          
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v6
         env:
@@ -75,3 +67,11 @@ jobs:
           registry: docker.io
           username: ${{ env.DOCKERHUB_USERNAME }}
           password: ${{ env.DOCKERHUB_PASSWORD }}
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3.7.0
+        with:
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
+          publish_dir: ui-automation/allure-report
+          publish_branch: allure-report
+          commit_message: Deployed Allure Report v.${{github.run_number}} to GitHub Pages
