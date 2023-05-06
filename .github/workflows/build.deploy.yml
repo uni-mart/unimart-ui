@@ -65,18 +65,13 @@ jobs:
           github_token: ${{ secrets.PERSONAL_TOKEN }}
           publish_dir: ui-automation/allure-report
           publish_branch: allure-report
+          commit_message: Deployed Allure Report v.${{github.run_number}} to GitHub Pages
 
-      - name: Build Docker image
-        working-directory: ui
-        id: build-docker-image
-        run: |
-          docker build -t $DOCKERHUB_USERNAME/unimart/ui:$github.run_number .
-          
-      - name: Tag and push Docker image
-        working-directory: ui
-        id: tag-push-docker-image
-        run: |
-          docker tag $DOCKERHUB_USERNAME/unimart/ui:$github.run_number $DOCKERHUB_REGISTRY/unimart/ui:latest
-          docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-          docker push $DOCKERHUB_USERNAME/unimart/ui:$github.run_number
-          docker push $DOCKERHUB_USERNAME/unimart/ui:latest
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+          image: $${{ DOCKERHUB_USERNAME }}/unimart/ui
+          tags: ${{github.run_number}}, latest
+          registry: dockerhub.io
+          username: ${{ DOCKERHUB_USERNAME }}
+          password: ${{ DOCKERHUB_PASSWORD }}    
