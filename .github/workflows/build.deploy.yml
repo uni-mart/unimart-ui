@@ -58,6 +58,8 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          run: |
+            cd $GITHUB_WORKSPACE
           branch: allure-report
           folder: ui-automation/allure-report
           token: ${{ secrets.GITHUB_TOKEN }}
