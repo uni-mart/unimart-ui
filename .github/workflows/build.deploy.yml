@@ -47,7 +47,7 @@ jobs:
 
       - name: Run Cypress tests
         id: run-cypress-test
-        working-directory: $GITHUB_WORKSPACE/unimart-ui-automation
+        working-directory: ${GITHUB_WORKSPACE}/unimart-ui-automation
         run: |
           npm install
           npm run cy:runHeadless
@@ -58,7 +58,7 @@ jobs:
         id: deploy-allure
         with:
           branch: allure-report
-          folder: $GITHUB_WORKSPACE/unimart-ui-automation/allure-report
+          folder: ${GITHUB_WORKSPACE}/unimart-ui-automation/allure-report
 
       - name: Build Docker image
         working-directory: ui
