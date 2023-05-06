@@ -59,12 +59,6 @@ jobs:
           npm run cy:genReport
           ls -1 | xargs -n 1 echo
           
-      - name: Save Allure report as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: allure-report
-          path: ui-automation/allure-report
-      
       - name: Change directory to UI folder
         run: |
           cd ui
@@ -78,7 +72,7 @@ jobs:
           run: |
             ls -1 | xargs -n 1 echo
           branch: allure-report
-          folder: ui-automation/allure-report
+          folder: ../ui-automation/allure-report
           token: ${{ secrets.GITHUB_TOKEN }}
           clean: true
           commit_message: Deploy Allure Report v.${{github.run_number}} to GitHub Pages
