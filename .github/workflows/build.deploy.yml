@@ -61,7 +61,7 @@ jobs:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
         with:
-          dockerfile: ui/Dockerfile
+          dockerfile: Dockerfile
           image: bitcode001/unimart/ui
           tags: ${{github.run_number}}, latest
           registry: docker.io
