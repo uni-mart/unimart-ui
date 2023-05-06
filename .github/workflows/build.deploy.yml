@@ -47,7 +47,7 @@ jobs:
 
       - name: Run Cypress tests
         id: run-cypress-test
-        working-directory: unimart-ui-automation
+        working-directory: $GITHUB_WORKSPACE/unimart-ui-automation
         run: |
           npm install
           npm run cy:runHeadless
