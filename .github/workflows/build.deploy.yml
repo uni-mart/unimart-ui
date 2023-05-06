@@ -60,13 +60,13 @@ jobs:
           
       - name: Change directory to UI folder
         run: |
-          cd ui
+          cd ../ui
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: allure-report
-          folder: allure-report
+          folder: ${{ runner.workspace }}/ui-automation/allure-report
           token: ${{ secrets.GITHUB_TOKEN }}
           clean: true
           commit_message: Deploy Allure Report v.${{github.run_number}} to GitHub Pages
