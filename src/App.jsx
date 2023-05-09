@@ -7,6 +7,7 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 import ProfilePage from 'Pages/ProfilePage'
 import MyProducts from 'Pages/MyProducts'
+import ProductView from 'Pages/ProductView'
 import BodyContainer from 'components/BodyContainer'
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
             <Route path='/signUp' element={<SignUpPage />} />
             <Route path='/profile' element={<ProfilePage />} />
             <Route path='/myProducts' element={<MyProducts />} />
+            <Route path='/productView' element={<ProductView />} />
+
           </Routes>
         </BodyContainer>
         <Footer />
