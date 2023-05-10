@@ -9,6 +9,11 @@ function SearchField(props) {
     props.onSearchTextChange(event.target.value);
   };
 
+  const handleClearSearch = () => {
+    setSearchText('');
+    props.onClear();
+  };
+
   return (
     <Form>
       <Form.Control
@@ -17,10 +22,17 @@ function SearchField(props) {
         value={searchText}
         onChange={handleSearchTextChange}
         debounce={props.debounce || 300}
-        onClear={props.onClear}
       />
+      <button onClick={handleClearSearch}>Clear</button>
     </Form>
   );
 }
 
 export default SearchField;
+
+
+
+
+
+
+
