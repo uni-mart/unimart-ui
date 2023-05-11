@@ -6,11 +6,12 @@ import Loader from '../components/Loader'
 import Message from 'components/Message'
 import FormContainer from 'components/FormContainer'
 import { login } from '../Actions/UserActions'
+import axios from 'axios';
 
 
 const SignUpPage = () => {
-    const [studentId, setStudentId] = useState('')
-    const [name, setName] = useState('')
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
@@ -18,9 +19,25 @@ const SignUpPage = () => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        dispatch(login(email, password))
+        // dispatch(login(email, password))
+    // }
+    const data = {
+        firstname: firstName,
+        lastname: lastName,
+        email: email,
+        password: password,
+      };
+      axios
+      .post('https://uni-mart-server.onrender.com/api/v1/auth/register', data)
+      .then((response) => {
+        // Handle successful registration
+        console.log(response.data);
+      })
+      .catch((error) => {
+        // Handle error
+        console.error(error);
+      });
     }
-
     return (
         <FormContainer>
             <h1>Register</h1>
@@ -34,9 +51,9 @@ const SignUpPage = () => {
                     <Form.Control
                         required
                         type="text"
-                        placeholder='Enter Student ID'
-                        value={studentId}
-                        onChange={(e) => setStudentId(e.target.value)}
+                        placeholder='first name'
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
                     >
                     </Form.Control>
                 </Form.Group>
@@ -46,9 +63,9 @@ const SignUpPage = () => {
                     <Form.Control
                         required
                         type="text"
-                        placeholder='Enter Name'
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        placeholder='last name'
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
                     >
                     </Form.Control>
                 </Form.Group>

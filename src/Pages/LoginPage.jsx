@@ -7,7 +7,7 @@ import Message from 'components/Message'
 import '../css/ProfilePage.css'
 import FormContainer from 'components/FormContainer'
 import { login } from '../Actions/UserActions'
-
+import axios from 'axios';
 
 const LoginPage = () => {
     const [email, setEmail] = useState('')
@@ -18,9 +18,23 @@ const LoginPage = () => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        dispatch(login(email, password))
-    }
-
+        // dispatch(login(email, password))
+    // }
+    const data = {
+        email: email,
+        password: password,
+      };
+      axios
+      .post('https://uni-mart-server.onrender.com/api/v1/auth/login', data)
+      .then((response) => {
+        // Handle successful login
+        console.log(response.data);
+      })
+      .catch((error) => {
+        // Handle error
+        console.error(error);
+      });
+  };
     return (
         <FormContainer>
             <h1>Sign In</h1>
@@ -40,7 +54,7 @@ const LoginPage = () => {
                     <Form.Control
                         type='password'
                         placeholder='Enter Password'
-                        value={email}
+                        value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     >
                     </Form.Control>
