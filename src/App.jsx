@@ -10,6 +10,7 @@ import MyProducts from 'Pages/MyProducts'
 import ProductView from 'Pages/ProductView'
 import ProductDetailView from 'Pages/ProductDetailView'
 import BodyContainer from 'components/BodyContainer'
+import CartView from 'Pages/CartView'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
             <Route path='/myProducts' element={<MyProducts />} />
             <Route path='/productView' element={<ProductView />} />
             <Route path='/productDetailView' element={<ProductDetailView/>} />
+            <Route path='/cartView' element={<CartView/>} />
 
           </Routes>
         </BodyContainer>
