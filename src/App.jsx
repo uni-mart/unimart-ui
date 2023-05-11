@@ -8,6 +8,7 @@ import Footer from 'components/Footer'
 import ProfilePage from 'Pages/ProfilePage'
 import MyProducts from 'Pages/MyProducts'
 import ProductView from 'Pages/ProductView'
+import ProductDetailView from 'Pages/ProductDetailView'
 import BodyContainer from 'components/BodyContainer'
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path='/profile' element={<ProfilePage />} />
             <Route path='/myProducts' element={<MyProducts />} />
             <Route path='/productView' element={<ProductView />} />
+            <Route path='/productDetailView' element={<ProductDetailView/>} />
 
           </Routes>
         </BodyContainer>
