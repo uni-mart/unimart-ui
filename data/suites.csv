@@ -1,2 +1,5 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sat May 06 20:15:08 UTC 2023","Sat May 06 20:15:11 UTC 2023","2890","","template spec","","template spec","passes","passes",""
+"passed","Fri May 12 14:33:49 UTC 2023","Fri May 12 14:33:53 UTC 2023","4212","","Test Product Page","","Test Product Page","should display product page","should display product page",""
+"passed","Fri May 12 14:33:43 UTC 2023","Fri May 12 14:33:47 UTC 2023","4148","","Test Home Page","","Test Home Page","should display home page","should display home page",""
+"passed","Fri May 12 14:33:56 UTC 2023","Fri May 12 14:33:59 UTC 2023","3557","","Test Signin field","","Test Signin field","should display signin field","should display signin field",""
+"passed","Fri May 12 14:34:01 UTC 2023","Fri May 12 14:34:05 UTC 2023","3915","","Test SingUp field","","Test SingUp field","should display signup field","should display signup field",""
