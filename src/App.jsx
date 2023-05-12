@@ -13,6 +13,11 @@ import BodyContainer from 'components/BodyContainer'
 import CartView from 'Pages/CartView'
 import ShippingAndPaymentView from 'Pages/ShippingAndPaymentView'
 import UploadView from 'Pages/UploadView'
+import OwnProduct from 'Pages/SubPage/OwnProduct'
+import OwnProfile from 'Pages/SubPage/OwnProfile'
+import OwnOrder from 'Pages/SubPage/OwnOrder'
+import OwnPayment from 'Pages/SubPage/OwnPayment'
+import NOFOUND from 'Pages/SubPage/NOFOUND'
 
 function App() {
 
@@ -25,15 +30,21 @@ function App() {
             <Route path='/' element={<LandingPage />} exact />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/signUp' element={<SignUpPage />} />
-            <Route path='/profile' element={<ProfilePage />} />
             <Route path='/myProducts' element={<MyProducts />} />
-            <Route path='/productView' element={<ProductView />} />
-            <Route path='/productDetailView' element={<ProductDetailView/>} />
-            <Route path='/cartView' element={<CartView/>} />
-            <Route path='/shippingAndPaymentView' element={<ShippingAndPaymentView/>} />
-            <Route path='/upload' element={<UploadView/>} />
+            <Route path='/products' element={<ProductView />} />
+            {/* <Route path='/productDetailView' element={<ProductDetailView/>} /> */}
+            <Route path='/profile' element={<ProfilePage />}>
+              <Route index element={<OwnProfile />} />
+              <Route path='products' element={<OwnProduct />} />
+              <Route path='orders' element={<OwnOrder />} />
+              <Route path='payment' element={<OwnPayment />} />
+              <Route path='upload' element={<UploadView />} />
+              <Route path="*" element={<NOFOUND />} />
+            </Route>
 
-
+            <Route path='/product/:id' element={<ProductDetailView />} />
+            <Route path='/cart' element={<CartView />} />
+            <Route path='/checkout-page' element={<ShippingAndPaymentView />} />
           </Routes>
         </BodyContainer>
         <Footer />

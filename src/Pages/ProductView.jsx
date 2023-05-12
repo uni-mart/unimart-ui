@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import '../css/ProductView.css';
 import MyCard from 'components/MyCard';
 
+import { Nav } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
+
 function ProductView() {
   const [searchTerm, setSearchTerm] = useState('');
   const [books, setBooks] = useState([
@@ -79,7 +82,7 @@ function ProductView() {
       <Row className="mt-4">
         {filteredBooks.map((book) => (
           <Col key={book.id} xs={6} sm={4} md={3} lg={3} className="mb-4">
-            <Link to={`/books/${book.id}`}>
+            <Link to={`/product/${book.id}`}>
               <MyCard title={book.title} imageSrc={book.imageUrl} text={book.author} />
             </Link>
           </Col>

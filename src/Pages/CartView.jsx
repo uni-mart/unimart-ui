@@ -1,30 +1,33 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Table, Form,FormGroup, Button } from "react-bootstrap";
+import { Container, Row, Col, Table, Form, FormGroup, Button } from "react-bootstrap";
+
+import { Nav } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
 
 const CartView = () => {
   // Dummy data for products
   const [cart, setCart] = useState([
     {
-        id: 1,
-        name: "Product 1",
-        price: 10.99,
-        image: "https://dummyimage.com/300x300/000/fff&text=Product+1",
-        quantity: 1
-        },
-        {
-        id: 2,
-        name: "Product 2",
-        price: 20.99,
-        image: "https://dummyimage.com/300x300/000/fff&text=Product+2",
-        quantity: 2
-        },
-        {
-        id: 3,
-        name: "Product 3",
-        price: 15.99,
-        image: "https://dummyimage.com/300x300/000/fff&text=Product+3",
-        quantity: 1
-        }
+      id: 1,
+      name: "Product 1",
+      price: 10.99,
+      image: "https://dummyimage.com/300x300/000/fff&text=Product+1",
+      quantity: 1
+    },
+    {
+      id: 2,
+      name: "Product 2",
+      price: 20.99,
+      image: "https://dummyimage.com/300x300/000/fff&text=Product+2",
+      quantity: 2
+    },
+    {
+      id: 3,
+      name: "Product 3",
+      price: 15.99,
+      image: "https://dummyimage.com/300x300/000/fff&text=Product+3",
+      quantity: 1
+    }
   ]);
 
   // State for checkbox
@@ -59,9 +62,9 @@ const CartView = () => {
       alert("Your cart is empty. Please add items to your cart before checking out.");
     }
   }
-  
+
   // Render the gift checkbox component
-function renderGiftCheckbox() {
+  function renderGiftCheckbox() {
     const [isChecked, setIsChecked] = useState(false);
     return (
       <FormGroup>
@@ -76,7 +79,7 @@ function renderGiftCheckbox() {
       </FormGroup>
     );
   }
-  
+
   // Render the terms checkbox component
   function renderTermsCheckbox() {
     return (
@@ -90,7 +93,7 @@ function renderGiftCheckbox() {
       </FormGroup>
     );
   }
-  
+
   // Render the subtotal component
   function renderSubtotal() {
     const subtotal = calculateTotal();
@@ -102,25 +105,29 @@ function renderGiftCheckbox() {
       </div>
     );
   }
-  
+
   // Render the checkout buttons component
   function renderCheckoutButtons() {
     const checkoutUrl = "/checkout";
     return (
-        <div className="mt-4 d-flex justify-content-between" style={{ marginTop: 20, backgroundColor: '#f5f5f5', padding: 10 }}>
-  <Button variant="secondary" className="mr-2 px-4 py-2" style={{ transition: 'all 0.2s' }}>
-    Back to Shopping
-  </Button>
-  <div className="d-flex align-items-center">
-    <span className="mr-2">{itemsInCart} item(s)  </span>
-    <Button variant="primary" href={checkoutUrl} onClick={handleCheckout} className="px-4 py-2" style={{ transition: 'all 0.2s' }}>
-      Checkout
-    </Button>
-  </div>
-</div>
+      <div className="mt-4 d-flex justify-content-between" style={{ marginTop: 20, backgroundColor: '#f5f5f5', padding: 10 }}>
+        <Button variant="secondary" className="mr-2 px-4 py-2" style={{ transition: 'all 0.2s' }}>
+          Back to Shopping
+        </Button>
+        <div className="d-flex align-items-center">
+          <span className="mr-2">{itemsInCart} item(s)  </span>
+          <LinkContainer to='/checkout-page'>
+            <Nav.Link>
+              <Button variant="primary" href={checkoutUrl} onClick={handleCheckout} className="px-4 py-2" style={{ transition: 'all 0.2s' }}>
+                Checkout
+              </Button>
+            </Nav.Link>
+          </LinkContainer>
+        </div>
+      </div>
 
 
-      
+
     );
   }
 
@@ -179,15 +186,15 @@ function renderGiftCheckbox() {
         </Col>
       </Row>
       <Row className="mt-4 px-4">
-                <Col md={{ span: 6, offset: 6 }}>
-                    {renderGiftCheckbox()}
-                    {renderTermsCheckbox()}
-                    {renderSubtotal()}
-                    {renderCheckoutButtons()}
-                </Col>
-                </Row>
+        <Col md={{ span: 6, offset: 6 }}>
+          {renderGiftCheckbox()}
+          {renderTermsCheckbox()}
+          {renderSubtotal()}
+          {renderCheckoutButtons()}
+        </Col>
+      </Row>
     </Container>
-                    );
-                    };
+  );
+};
 
 export default CartView;
