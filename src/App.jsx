@@ -11,6 +11,7 @@ import ProductView from 'Pages/ProductView'
 import ProductDetailView from 'Pages/ProductDetailView'
 import BodyContainer from 'components/BodyContainer'
 import CartView from 'Pages/CartView'
+import ShippingAndPaymentView from 'Pages/ShippingAndPaymentView'
 
 function App() {
 
@@ -28,6 +29,8 @@ function App() {
             <Route path='/productView' element={<ProductView />} />
             <Route path='/productDetailView' element={<ProductDetailView/>} />
             <Route path='/cartView' element={<CartView/>} />
+            <Route path='/shippingAndPaymentView' element={<ShippingAndPaymentView/>} />
+
 
           </Routes>
         </BodyContainer>
