@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import '../css/ProfilePage.css'; // Import custom styles for the profile page
+import "../../css/ProfilePage.css"
 import Sidebar from 'components/Sidebar';
 import SearchField from 'components/SearchField';
 import MyCard from 'components/MyCard';
@@ -57,32 +57,26 @@ const MyProducts = (props) => {
 
     return (
         <Container fluid className="MyProduct-page">
-            <Row>
-                <Sidebar username={username} />
-                <br />
-                <Col md={8}>
-                    <SearchField
-                        onSearchTextChange={handleSearchTextChange}
-                        onClear={handleClearSearch}
-                        value={searchText}
-                        debounce={500}
-                        className='py-2'
-                    />
-                    <Container className='py-3'>
-                        <Row>
-                            {cards.map(card => (
-                                <Col sm={4} key={card.title} className='py-2' style={{ cursor: "pointer" }}>
-                                    <LinkContainer to={`/product/${2}`}>
-                                        <Nav.Link>
-                                            <MyCard title={card.title} imageSrc={card.imageSrc} text={card.text} />
-                                        </Nav.Link>
-                                    </LinkContainer>
-                                </Col>
-                            ))}
-                        </Row>
-                    </Container>
-                </Col>
-            </Row>
+            <SearchField
+                onSearchTextChange={handleSearchTextChange}
+                onClear={handleClearSearch}
+                value={searchText}
+                debounce={500}
+                className='py-2'
+            />
+            <Container className='py-3'>
+                <Row>
+                    {cards.map(card => (
+                        <Col sm={4} key={card.title} className='py-2' style={{ cursor: "pointer" }}>
+                            <LinkContainer to={`/product/${2}`}>
+                                <Nav.Link>
+                                    <MyCard title={card.title} imageSrc={card.imageSrc} text={card.text} />
+                                </Nav.Link>
+                            </LinkContainer>
+                        </Col>
+                    ))}
+                </Row>
+            </Container>
         </Container>
     )
 }

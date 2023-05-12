@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 
 const MyCard = ({ title, imageSrc, text }) => {
   return (
-    <Card>
+    <Card className="book-card">
       <Card.Img variant="top" src={imageSrc} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
