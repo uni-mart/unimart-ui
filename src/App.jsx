@@ -12,6 +12,7 @@ import ProductDetailView from 'Pages/ProductDetailView'
 import BodyContainer from 'components/BodyContainer'
 import CartView from 'Pages/CartView'
 import ShippingAndPaymentView from 'Pages/ShippingAndPaymentView'
+import UploadView from 'Pages/UploadView'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route path='/productDetailView' element={<ProductDetailView/>} />
             <Route path='/cartView' element={<CartView/>} />
             <Route path='/shippingAndPaymentView' element={<ShippingAndPaymentView/>} />
+            <Route path='/upload' element={<UploadView/>} />
 
 
           </Routes>
