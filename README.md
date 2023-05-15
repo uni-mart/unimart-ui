@@ -86,8 +86,8 @@ Unimart follows semantic versioning guidelines to maintain transparency in the r
 
 ## Leads
 
-- Utsav Adhikari
-- Anil Rai
+- [Utsav Adhikari](https://github.com/autsav)
+- [Anil Rai](https://github.com/bitcode001)
 
 ## Thanks
 
