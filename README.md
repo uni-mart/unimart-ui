@@ -91,7 +91,7 @@ Unimart follows semantic versioning guidelines to maintain transparency in the r
 - [Anil Rai](https://github.com/bitcode001)
 
 ## Deployment location
-Current latest build is deployed in AWS EC2 instance, which can be found using following url: [Unimart](http://ec2-35-177-22-237.eu-west-2.compute.amazonaws.com:4173/)
+Current latest build is deployed in AWS EC2 instance, which can be found using following url: [Unimart](http://35.177.22.237:4173/)
 
 ## Thanks
 
