@@ -30,9 +30,6 @@ function App() {
             <Route path='/' element={<LandingPage />} exact />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/signUp' element={<SignUpPage />} />
-            <Route path='/myProducts' element={<MyProducts />} />
-            <Route path='/products' element={<ProductView />} />
-            {/* <Route path='/productDetailView' element={<ProductDetailView/>} /> */}
             <Route path='/profile' element={<ProfilePage />}>
               <Route index element={<OwnProfile />} />
               <Route path='products' element={<OwnProduct />} />
@@ -41,7 +38,9 @@ function App() {
               <Route path='upload' element={<UploadView />} />
               <Route path="*" element={<NOFOUND />} />
             </Route>
-
+            
+            <Route path='/myProducts' element={<MyProducts />} />
+            <Route path='/products' element={<ProductView />} />
             <Route path='/product/:id' element={<ProductDetailView />} />
             <Route path='/cart' element={<CartView />} />
             <Route path='/checkout-page' element={<ShippingAndPaymentView />} />
