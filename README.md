@@ -1,6 +1,6 @@
 # GitHub Repository: Unimart
 
-[![ alt release ](https://img.shields.io/badge/Release-Stable%20Version:%202.8.0-brightgreen)](https://github.com/uni-mart/unimart-ui/releases/tag/v2.8.0) [![ alt stable-branch ](https://img.shields.io/badge/Stable%20Branch-%20main-blue)](https://github.com/uni-mart/unimart-ui/tree/main) [![ alt dev-branch ](https://img.shields.io/badge/Dev%20Branch-%20sprint--3-orange)](https://github.com/uni-mart/unimart-ui/tree/sprint-3) [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen)](https://github.com/uni-mart/unimart-ui/actions)
+[![ alt release ](https://img.shields.io/badge/Release-Stable%20Version:%202.9.0-brightgreen)](https://github.com/uni-mart/unimart-ui/releases/tag/v2.8.0) [![ alt stable-branch ](https://img.shields.io/badge/Stable%20Branch-%20main-blue)](https://github.com/uni-mart/unimart-ui/tree/main) [![ alt dev-branch ](https://img.shields.io/badge/Dev%20Branch-%20sprint--3-orange)](https://github.com/uni-mart/unimart-ui/tree/sprint-3) [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen)](https://github.com/uni-mart/unimart-ui/actions)
 
 
 ## Table of Contents
