@@ -17,6 +17,7 @@
   - [Community](#community)
   - [Versioning](#versioning)
   - [Leads](#leads)
+  - [Deployment location](#deployment-location)
   - [Thanks](#thanks)
 
 ## Quick Start
@@ -86,8 +87,11 @@ Unimart follows semantic versioning guidelines to maintain transparency in the r
 
 ## Leads
 
-- Utsav Adhikari
-- Anil Rai
+- [Utsav Adhikari](https://github.com/autsav)
+- [Anil Rai](https://github.com/bitcode001)
+
+## Deployment location
+Current latest build is deployed in AWS EC2 instance, which can be found using following url: [Unimart](http://ec2-35-177-22-237.eu-west-2.compute.amazonaws.com:4173/)
 
 ## Thanks
 
