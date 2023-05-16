@@ -1,4 +1,6 @@
 import { Button } from 'react-bootstrap'
+import { Nav } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
 
 const LandingPage = () => {
   return (
@@ -11,9 +13,13 @@ const LandingPage = () => {
           <h1 className='text-white' style={{ fontSize: "4rem", marginTop: "3rem" }}>SAVE THE OCEANS</h1>
           <h6 className='text-white' style={{ fontSize: "1.25rem" }}>SELL OR BUY SECOND HAND ITEMS</h6>
 
-          <Button type='submit' variant="primary" className='bg-white text-primary' style={{ marginTop: "7rem" }}>
-            Shop Now
-          </Button>
+          <LinkContainer to='/products'>
+            <Nav.Link>
+              <Button type='submit' variant="primary" className='bg-white text-primary' style={{ marginTop: "7rem" }}>
+                Shop Now
+              </Button>
+            </Nav.Link>
+          </LinkContainer>
         </div>
       </div>
     </div>

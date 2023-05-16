@@ -1,6 +1,9 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 
+import { Nav } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
+
 const Footer = () => {
   return (
     <footer className='bg-black'>
@@ -33,6 +36,11 @@ const Footer = () => {
                 <span className='text-white my-2'>
                   Blogs
                 </span>
+                <LinkContainer to='/profile'>
+                  <Nav.Link className='text-white my-2'>
+                    My Profile
+                  </Nav.Link>
+                </LinkContainer>
               </div>
             </section>
           </Col>
